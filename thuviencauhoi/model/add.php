@@ -13,15 +13,21 @@ function checkTrung_MaCauHoi($macauhoi){
 }
 if(isset($_POST["thamso"]["macauhoi"]) and isset($_POST["thamso"]["noidung"])){
 	$macauhoi=$_POST["thamso"]["macauhoi"];
-	$dokho=$_POST["thamso"]["dokho"];
+	$intdokho=$_POST["thamso"]["dokho"];
+	$strdokho = "Dễ";
+	if ($intdokho == 2) {
+		$strdokho = "Trung Bình";
+	} elseif ($intdokho == 3) {
+		$strdokho = "Khó";
+	}
 	$noidung=$_POST["thamso"]["noidung"];
 	$mamon=$_POST["thamso"]["mamon"];
-
 	if(checkTrung_MaCauHoi($macauhoi)){
 		echo "Câu hỏi đã tồn tại vui lòng kiểm tra lại";
 	}
 	else{
-		$sql="INSERT INTO `tvcauhoi`(`macauhoi`,`mamon`,`dokho`,`noidung`) VALUES ('$macauhoi','$mamon',$dokho,'$noidung')";
+		$sql="INSERT INTO `tvcauhoi`(`macauhoi`,`mamon`,`intdokho`,`strdokho`,`noidung`)
+		VALUES ('$macauhoi','$mamon',$intdokho,'$strdokho','$noidung')";
 		$stmt=$conn->query($sql);
 		if($stmt){
 			echo "Thêm thành công";

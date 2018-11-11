@@ -6,10 +6,6 @@ include "../../header/menu.php" ?>
 
 <div style="width: 1200px; margin: auto;">
     <table id="dg-khoa"></table>
-    <!--Toolbar của datagrid khoa-->
-    <div id="tbar-khoa" style="padding:5px;">
-      
-    </div>
 </div>
 <!--Dialog tiện ích khoa-->
 <div id="dlg-khoa" class="easyui-dialog" title="Thêm khoa" style="width:auto;height:auto;padding:20px"

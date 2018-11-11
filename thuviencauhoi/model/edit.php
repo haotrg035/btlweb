@@ -15,14 +15,20 @@ function KTTrung_MaCauHoi($macauhoi){
 if(isset($_POST["thamso"]["macauhoi"]) and isset($_POST["thamso"]["noidung"])){
 	$macauhoicu=$_POST["thamso"]["macauhoicu"];
 	$macauhoi=$_POST["thamso"]["macauhoi"];
-	$dokho=$_POST["thamso"]["dokho"];
+	$intdokho=$_POST["thamso"]["dokho"];
+	$strdokho = "Dễ";
+	if ($intdokho == 2) {
+		$strdokho = "Trung Bình";
+	} elseif ($intdokho == 3) {
+		$strdokho = "Khó";
+	}
 	$noidung=$_POST["thamso"]["noidung"];
 	$mamon=$_POST["thamso"]["mamon"];
 	if(KTTrung_MaCauHoi($macauhoi) and $macauhoi !=$macauhoicu){
 		echo "Mã câu hỏi đã tồn tại vui lòng kiểm tra lại";
 	}
 	else{
-		$sql="UPDATE `tvcauhoi` SET `mamon`='$mamon',`dokho`='$dokho',`noidung`='$noidung' WHERE macauhoi='$macauhoicu'";
+		$sql="UPDATE `tvcauhoi` SET `mamon`='$mamon',`intdokho`='$intdokho',`strdokho`='$strdokho',`noidung`='$noidung' WHERE macauhoi='$macauhoicu'";
 		$thucthi=$conn->query($sql);
 		if($thucthi){
 			echo "Sửa thành công";

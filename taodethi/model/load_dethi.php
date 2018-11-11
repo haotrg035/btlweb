@@ -6,12 +6,10 @@
 			$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 			$offset = ($page-1)*$rows;
 			$result = array();
-			$rs = $conn->query("SELECT COUNT(1) FROM `tvcauhoi` WHERE `tvcauhoi`.macauhoi ='$timkiem' or `tvcauhoi`.noidung like '%$timkiem%' ");	
+			$rs = $conn->query("SELECT COUNT(1) FROM `khoa` WHERE khoa.makhoa ='$timkiem' or khoa.tenkhoa like '%$timkiem%' ");	
 			$row = mysqli_fetch_row($rs);
 			$result["total"] = $row[0];  
-			$s="SELECT * FROM `tvcauhoi` 
-			WHERE `tvcauhoi`.macauhoi ='$timkiem' or `tvcauhoi`.noidung like '%$timkiem%'
-			ORDER BY `intdokho` limit $offset,$rows";
+			$s="SELECT * FROM `khoa` WHERE khoa.makhoa ='$timkiem' or khoa.tenkhoa like '%$timkiem%' 	limit $offset,$rows";
 			$rs = $conn->query($s);
 			$items = array();
 			while($row = mysqli_fetch_object($rs)){
@@ -25,10 +23,10 @@
 			$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 			$offset = ($page-1)*$rows;
 			$result = array();
-			$rs = $conn->query("SELECT COUNT(1) FROM `tvcauhoi`");	
+			$rs = $conn->query("SELECT COUNT(1) FROM `khoa`");	
 			$row = mysqli_fetch_row($rs);
 			$result["total"] = $row[0];  
-			$s="SELECT * FROM `tvcauhoi` ORDER BY `intdokho` limit $offset,$rows";
+			$s="SELECT * FROM `khoa`  limit $offset,$rows";
 			$rs = $conn->query($s);
 			$items = array();
 			while($row = mysqli_fetch_object($rs)){

@@ -4,7 +4,7 @@ include "../../header/menu.php" ?>
 <br>
 <!-- Datagrid của khoa-->
 
-<div style="width: 1200px; margin: auto;">
+<div style="width: 1200px; height:400px;margin: auto;">
     <table id="dg-cauhoi" style="height: 400px"></table>
 </div>
 <!--Dialog tiện ích khoa-->
@@ -13,7 +13,7 @@ closed="true" buttons="#btns-dlg-cauhoi">
     <form id="cauhoi-fm" method="post">
         <div class="fitem">
             <input id="mamon" name="mamon" class="easyui-combobox" label="Môn học:" labelPosition="top" style="width:100%; float: left;" data-options="
-                 url:'../model/taidulieucomboboxmonhoc.php',
+                url:'../model/taidulieucomboboxmonhoc.php',
                 valueField: 'mamon',
                 textField: 'tenmon',
                 label: 'Môn Học:',

@@ -12,7 +12,7 @@ function addCauHoi(){
 				_mamon=$("#mamon").combobox("getValue");
 
 				let bien ={macauhoi:_macauhoi,dokho:_dokho,noidung:_noidung,mamon:_mamon};
-				sendajax("../model/add.php",bien,"dg-khoa");
+				sendajax("../model/add.php",bien,"dg-cauhoi");
 				$("#dlg-cauhoi").dialog("close");
 			}
 		},{
@@ -65,7 +65,7 @@ function editCauHoi(){
 function delCauHoi(){
 	let _row = $("#dg-cauhoi").datagrid("getSelected");
 	if(_row){
-		let bien ={makhoa:_row.makhoa};
+		let bien ={macauhoi:_row.macauhoi};
 		xoadulieuajax("../model/delete.php",bien,"dg-cauhoi","Bạn đang xóa một Câu Hỏi, bạn chắc chứ?");
 	}
 	else{
