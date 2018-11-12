@@ -3,10 +3,10 @@
 
     <script type="text/javascript" src="../js/ajax_dethi.js"></script>
     <div style="width: 1200px; margin:auto;"><br>
-        <table id="dg-khnh" class="easyui-datagrid" title="Thông Tin Đề Thi" style="width:1200px;height:500px; text-align: center;" data-options="
-            url: '../model/taidulieudethi.php',
+        <table id="dg-thongtindethi" class="easyui-datagrid" title="Thông Tin Đề Thi" style="width:1200px;height:500px; text-align: center;" data-options="
+            url: '../model/load_thongtindethi.php',
             fitColumns:true,
-            toolbar:'#tb-khnh',
+            toolbar:'#tb-thongtindethi',
             rownumbers:true,
             singleSelect:true,
             pagination:true">
@@ -22,12 +22,13 @@
         </table>
 
     <!--Toolbar của datagrid nguoidung-->
-    <div id="tb-khnh" style="padding:2px 5px;">
+    <div id="tb-thongtindethi" style="padding:2px 5px;">
         <a onclick="themdethi()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">Thêm</a> 
         <a onclick="suadethi()" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">Sửa</a>
         <a onclick="xoadethi()" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Xóa</a>
         <a onclick="tailai()" class="easyui-linkbutton" data-options="iconCls:'icon-reload'">Tải lại</a>
-        <input type="text" id="texb-khnh-search" class="easyui-textbox" prompt="Mã đề thi, tiêu " style="width: 200px;" data-options="onChange:function(val1,val2){ $('#dg-khnh').datagrid('load',{timkiem:val1})}">
+        <input type="text" id="texb-khnh-search" class="easyui-searchbox" prompt="Mã đề thi, tiêu đề"
+            style="width: 200px;" data-options="searcher: (value,name) => {timkiem('dg-thongtindethi',value);}">
         </div>
     </div>
 

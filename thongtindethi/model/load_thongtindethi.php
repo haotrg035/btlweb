@@ -9,7 +9,14 @@
 			$rs = $conn->query("SELECT COUNT(1) FROM thongtindethi where thongtindethi.madethi ='$timkiem' or thongtindethi.tieude like '%$timkiem%' ");	
 				$row = mysqli_fetch_row($rs);
 				$result["total"] = $row[0]; 
-			$s="SELECT * FROM thongtindethi where thongtindethi.madethi ='$timkiem' or thongtindethi.tieude like '%$timkiem%' limit $offset,$rows";	 
+			$s="SELECT *
+				FROM (
+					SELECT `thongtindethi`.*,`monhoc`.`tenmon`,`nguoidung`.`tennd` 
+					FROM `thongtindethi`, `nguoidung`, `monhoc` 
+					WHERE `nguoidung`.`mand` = `thongtindethi`.`mand` and `monhoc`.`mamon` = `thongtindethi`.`mamon`
+				) AS `temp`
+				WHERE `temp`.`madethi` ='$timkiem' OR `temp`.`tieude`
+				like '%$timkiem%' limit $offset,$rows";	 //nhức đầu.
 				$rs = $conn->query($s);
 				$items = array();
 			while($row = mysqli_fetch_object($rs)){

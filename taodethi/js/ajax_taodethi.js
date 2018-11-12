@@ -11,8 +11,13 @@ function taoDeThi(){
 				_socaude=$("#socaude").textbox("getValue");
 				_socautb=$("#socautb").textbox("getValue");
 				_socaukho=$("#socaukho").textbox("getValue");
+
+				_tieude = $('#madethi').combobox('getText').split('-')[1].trim();
+				_tenmonhoc = $('#mamon').combobox('getText').trim();
+
 				let bien ={mamon:_mamon,madethi:_madethi,socaude:_socaude,socautb:_socautb,socaukho:_socaukho};
-				sendajax("../model/add.php",bien,"dg-taodethi");
+				sendajax("review.php",bien,"dg-taodethi");
+				window.open(`reviewdethi.php?tieude=${_tieude}&tenmonhoc=${_tenmonhoc}&mamon=${_mamon}&madethi=${_madethi}&socaude=${_socaude}&socautb=${_socautb}&socaukho=${_socaukho}`, '_blank');
 				$("#dlg-taodethi").dialog("close");
 			}
 		},{

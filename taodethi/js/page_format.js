@@ -4,29 +4,30 @@ addbtn.linkbutton({
     iconCls:'icon-add',
     onClick:()=>{taoDeThi();},
 });
-let editbtn = $('<a style="margin-right:6px">Sửa Khoa</a>').appendTo(toolbar);
-editbtn.linkbutton({
-    iconCls:'icon-edit',
-    onClick:()=>{editKhoa();},
-});
-let delbtn = $('<a style="margin-right:6px">Xóa Khoa</a>').appendTo(toolbar);
-delbtn.linkbutton({
-    iconCls:'icon-cancel',
-    onClick:()=>{delKhoa();},
-});
-let reloadbtn = $('<a style="margin-right:6px">Tải Lại</a>').appendTo(toolbar);
-reloadbtn.linkbutton({
-    iconCls:'icon-reload',
-    onClick:()=>{reload('dg-taodethi');},
-});
-let searchinp = $('<input>"').appendTo(toolbar);
-searchinp.searchbox({
-    width:230,
-    prompt:'Tìm theo mã khoa hoặc tên khoa',
-    searcher: (value,name) => {khoa_seach(value);}
-});
+
+// let editbtn = $('<a style="margin-right:6px">Sửa Khoa</a>').appendTo(toolbar);
+// editbtn.linkbutton({
+//     iconCls:'icon-edit',
+//     onClick:()=>{editKhoa();},
+// });
+// let delbtn = $('<a style="margin-right:6px">Xóa Khoa</a>').appendTo(toolbar);
+// delbtn.linkbutton({
+//     iconCls:'icon-cancel',
+//     onClick:()=>{delKhoa();},
+// });
+// let reloadbtn = $('<a style="margin-right:6px">Tải Lại</a>').appendTo(toolbar);
+// reloadbtn.linkbutton({
+//     iconCls:'icon-reload',
+//     onClick:()=>{reload('dg-taodethi');},
+// });
+// let searchinp = $('<input>"').appendTo(toolbar);
+// searchinp.searchbox({
+//     width:230,
+//     prompt:'Tìm ...',
+//     searcher: (value,name) => {khoa_seach(value);}
+// });
 $('#dg-taodethi').datagrid({
-    url:'../model/load_taodethi.php',
+    url:'../model/load_tvdethi.php',
     title:'Tạo Đề Thi',
     fitColumns:true,
     rownumbers:true,
@@ -36,8 +37,16 @@ $('#dg-taodethi').datagrid({
     loadMsg:'Đang load dữ liệu',
     emptyMsg:'Không có gì để hiển thị',
     columns:[[
-        {field:'makhoa',title:'<b>Mã Khoa</b>',align:'center',width:50},
-        {field:'tenkhoa',title:'<b>Tên Khoa</b>',align:'left',width:300}
+        {field:'mabodethi',title:'<b>Mã Bộ Đề Thi</b>',align:'center',width:50},
+        {field:'madethi',title:'<b>Mã Đề Thi</b>',align:'left',width:50},
+        {field:'macauhoidethi',title:'<b>Mã Bộ Câu Hỏi</b>',align:'left',width:50}
     ]],
     toolbar:toolbar
+});//Hiện nhiều thông tin hơn nếu có tg
+$('#mamon').combobox({
+    onChange:(nval,oval)=>{
+        $('#madethi').combobox({
+            url:'../model/taidulieucomboboxdethi.php?mamon='+nval,
+        });
+    }
 });

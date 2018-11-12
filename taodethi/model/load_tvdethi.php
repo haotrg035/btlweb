@@ -23,10 +23,10 @@
 			$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 			$offset = ($page-1)*$rows;
 			$result = array();
-			$rs = $conn->query("SELECT COUNT(1) FROM `khoa`");	
+			$rs = $conn->query("SELECT COUNT(1) FROM `tvdethi`");	
 			$row = mysqli_fetch_row($rs);
 			$result["total"] = $row[0];  
-			$s="SELECT * FROM `khoa`  limit $offset,$rows";
+			$s="SELECT * FROM `tvdethi`  limit $offset,$rows";
 			$rs = $conn->query($s);
 			$items = array();
 			while($row = mysqli_fetch_object($rs)){

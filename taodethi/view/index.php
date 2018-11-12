@@ -25,7 +25,7 @@ closed="true" buttons="#btns-dlg-taodethi">
                 url:'../model/taidulieucomboboxdethi.php',
                 valueField: 'madethi',
                 textField: 'tieude',
-                label: 'Môn Học:',
+                label: 'Đề Thi:',
                 labelPosition: 'top'
                 ">
         </div>

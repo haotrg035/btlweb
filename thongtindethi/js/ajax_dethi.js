@@ -10,7 +10,7 @@ function themdethi(){
 		$tieude=$("#tieude").textbox("getValue");
 		$ghichu=$("#ghichu").textbox("getValue");
 		var bien ={madethi:$madethi,mamon:$mamon,mand:$mand,tieude:$tieude,ghichu:$ghichu};
-		sendajax("../model/them.php",bien,"dg-khnh");
+		sendajax("../model/them.php",bien,"dg-thongtindethi");
 		$("#thongtindethi-dlg").dialog("close");
 	})
 }
@@ -19,7 +19,7 @@ function suadethi(){
 	$("#themdethi").hide();
 	$("#suadethi").show();
 	$("#xoadethi").hide();
-	var row = $("#dg-khnh").datagrid("getSelected");
+	var row = $("#dg-thongtindethi").datagrid("getSelected");
 	if(row){
 		$madethi=row.madethi;
 		$("#madethi-fm").form("load",row);
@@ -32,7 +32,7 @@ function suadethi(){
 		$ghichu=$("#ghichu").textbox("getValue");
 
 		var bien ={madethicu:row.madethi,madethi:$madethi,mamon:$mamon,mand:$mand,tieude:$tieude,ghichu:$ghichu};
-		sendajax("../model/sua.php",bien,"dg-khnh");
+		sendajax("../model/sua.php",bien,"dg-thongtindethi");
 		$("#thongtindethi-dlg").dialog("close");
 	})
 	}
@@ -42,10 +42,10 @@ function suadethi(){
 }
 //xóa người dùng
 function xoadethi(){
-	var row = $("#dg-khnh").datagrid("getSelected");
+	var row = $("#dg-thongtindethi").datagrid("getSelected");
 	if(row){
 		var bien ={madethi:row.madethi};
-		xoadulieuajax("../model/xoa.php",bien,"dg-khnh","Bạn có muốn xóa đề thi này không ?");
+		xoadulieuajax("../model/xoa.php",bien,"dg-thongtindethi","Bạn có muốn xóa đề thi này không ?");
 	}
 	else{
 		thongbao("Vui lòng chọn đề thi cần xóa");
@@ -54,5 +54,5 @@ function xoadethi(){
 //tải lại datagrid
 function tailai()
 {
-         $('#dg-khnh').datagrid('reload'); 
+	$('#dg-thongtindethi').datagrid('reload'); 
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * thu vien php
+ * thư viện php cho bài tập lớn web.
  *
  * @author haotrg035
  */
@@ -63,33 +63,53 @@ include_once 'ketnoi.php';
 ?>
 <?php
 //hiển thị câu hỏi + đáp án theo câu hỏi ra dạng bảng
-    function hienthicauhoi($cauhoi,$dapan){
-        $j = 1;;
-        foreach ($cauhoi as $key => $value) { ?>
-            <table border="1" style="border-collapsse: collapse;">
+    function hienthicauhoi($cauhoi,$dapan,$tieude,$temonhoc){
+        $j = 1;
+        $html = '<table style="width:100%;margin-bottom:50px">
+                        <tr  style="width:100%">
+                            <td style="text-align:center; width:50%">
+                                <h3>BỘ GIÁO DỤC <br>
+                                    <span style="font-weight:normal">TRƯỜNG ĐH KỸ THUẬT CÔNG NGHỆ CẦN THƠ <br></span>
+                                    <div style="width:50%;height:1px;border-bottom:2px dashed black;margin:10px auto"></div>
+                                </h3>
+                            </td>
+                            <td style="text-align:center">
+                                <h3>' .$tieude .' <br>
+                                    MÔN : '.$temonhoc
+                                .'</h3>
+                            </td>
+                        </tr>
+                    </table> 
+                    <h2> </h2>';
+        foreach ($cauhoi as $key => $value) {
+            $html .= '
+            <table border="1" style="border-collapsse: collapse; width:100%;">
                 <tr>
-                    <td width = "300" colspan="2">
-                        <?php echo "Câu $j: " .$value["noidungcauhoi"] ?>
-                    </td>
+                    <td width = "100%" colspan="2" style="padding: 5px;">'
+                        .'<b style="color:slateblue">'."Câu $j:</b> " .$value["noidungcauhoi"]
+                    .'?</td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <ol type="A" style="Width: 800px; postion:relative">
-                            <?php 
-                                for ($i=0; $i < 4; $i++) { ?>
-                                    <li style="float:left;width:45%;"><?php echo $dapan[$value['macauhoi']][$i]; ?></li>
-                                <?php }?>
-                        </ol>
+                        <ol type="A" style="Width: 100%; postion:relative;">';
+                            $dapantemp=$dapan[$value['macauhoi']];
+                            shuffle($dapantemp);
+                            for ($i=0; $i < 4; $i++) {
+                                
+                                $html = $html .'<li style="float:left;width:45%;padding: 5px 10px;">' .$dapantemp[$i] .'</li>';
+                            }
+                        $html = $html .'</ol>
                     </td>
                 </tr>
-            </table>
-        <?php
+            </table>';
+
     $j++;   }
+    return $html;
     }
 ?>
 <?php
-    function traodoicauhoi($mang){
+    function traodoicauhoi($mang,$dapan){
         shuffle($mang);
-        hienthicauhoi($mang);
+        shuffle($dapan);
     }
 ?>
