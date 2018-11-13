@@ -17,7 +17,8 @@ closed="true" buttons="#btns-dlg-cauhoi">
                 valueField: 'mamon',
                 textField: 'tenmon',
                 label: 'Môn Học:',
-                labelPosition: 'top'
+                labelPosition: 'top',
+                onChange:()=>setMaCH()
                 ">
         </div>
         <div class="fitem">

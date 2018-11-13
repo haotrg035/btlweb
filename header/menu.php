@@ -1,19 +1,18 @@
-<div id="main-menu" style="margin-top: 10px;">
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/" id="menu-trangchu-item" title=""></a>
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/khoa/view" id="menu-khoa-item" title=""></a>      
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/monhoc/view" id="menu-monhoc-item" title=""></a>      
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/nguoidung/view" id="menu-nguoidung-item" title=""></a>
-            <div style="margin: 10px;">
-            </div>
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/taodethi/view" id="menu-taodethi-item" title=""></a>      
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thongtindethi/view" id="menu-thongtindethi-item" title=""></a>      
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thongtinmonhoc/view" id="menu-thongtinmonhoc-item" title=""></a>      
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thuviencauhoi/view" id="menu-thuviencauhoi-item" title=""></a>
-            <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/dapan/view" id="menu-dapan-item" title=""></a>      
+    <div id="main-menu" style="margin: 0 auto; padding-top:10px;width:1200px">
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/" id="menu-trangchu-item" title=""></a>
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/khoa/view" id="menu-khoa-item" title=""></a>      
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/monhoc/view" id="menu-monhoc-item" title=""></a>      
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/nguoidung/view" id="menu-nguoidung-item" title=""></a>
+        <div style="margin: 10px;">
         </div>
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/taodethi/view" id="menu-taodethi-item" title=""></a>      
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thongtindethi/view" id="menu-thongtindethi-item" title=""></a>      
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thongtinmonhoc/view" id="menu-thongtinmonhoc-item" title=""></a>      
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/thuviencauhoi/view" id="menu-thuviencauhoi-item" title=""></a>
+        <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/dapan/view" id="menu-dapan-item" title=""></a>      
+    </div>
  
-        </ul>
-	</div>
+</div>
     <script>
         $('#menu-trangchu-item').linkbutton({
             text:'<span style="font-size:25px;padding:10px;font-weight:bold">Trang Chủ</span>',

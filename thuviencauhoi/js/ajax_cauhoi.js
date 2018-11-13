@@ -1,3 +1,7 @@
+function setMaCH(){
+	mamon = $('#mamon').combobox('getValue');
+	$('#macauhoi').textbox('setValue','CH'+mamon);
+}
 //thêm một khoa mới
 function addCauHoi(){
 	$('#dlg-cauhoi').dialog({

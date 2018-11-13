@@ -6,10 +6,13 @@
 			$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 			$offset = ($page-1)*$rows;
 			$result = array();
-			$rs = $conn->query("SELECT COUNT(1) FROM `dapan` WHERE `dapan`.madapan='$timkiem' OR `dapan`.macauhoi LIKE '%$timkiem%' ");	
+			$rs = $conn->query("SELECT COUNT(1) FROM `dapan` WHERE `dapan`.madapan='$timkiem' 
+				OR `dapan`.macauhoi LIKE '%$timkiem%' OR `dapan`.mamon LIKE '%$timkiem%' ");	
 				$row = mysqli_fetch_row($rs);
 				$result["total"] = $row[0]; 
-			$s="SELECT * FROM `dapan` WHERE `dapan`.madapan='$timkiem' OR `dapan`.macauhoi LIKE '%$timkiem%'   LIMIT $offset,$rows";	 
+			$s="SELECT * FROM `dapan` WHERE `dapan`.madapan='$timkiem' 
+				OR `dapan`.macauhoi LIKE '%$timkiem%' OR `dapan`.`noidung` LIKE '%$timkiem%' OR `dapan`.macauhoi LIKE '%$timkiem%'
+			   	LIMIT $offset,$rows";	 
 				$rs = $conn->query($s);
 				$items = array();
 			while($row = mysqli_fetch_object($rs)){
@@ -26,7 +29,7 @@
 			$rs = $conn->query("SELECT COUNT(1) FROM `dapan`");	
 				$row = mysqli_fetch_row($rs);
 				$result["total"] = $row[0]; 
-			$s="SELECT * FROM `dapan` ORDER BY macauhoi limit $offset,$rows";	 
+			$s="SELECT * FROM `dapan` ORDER BY `dapan`.macauhoi ASC limit $offset,$rows";	 
 				$rs = $conn->query($s);
 				$items = array();
 			while($row = mysqli_fetch_object($rs)){
