@@ -1,3 +1,4 @@
+
 //thêm một khoa mới
 function taoDeThi(){
 	$('#dlg-taodethi').dialog({
@@ -60,7 +61,7 @@ function editKhoa(){
 		$("#dlg-taodethi").dialog("open");
 	}
 	else{
-		thongbao("Vui lòng chọn khoa!");
+		thongbao("Vui lòng chọn Đề Thi!");
 	}
 }
 // xóa một khoa đã tồn tại
@@ -68,7 +69,7 @@ function delKhoa(){
 	let _row = $("#dg-taodethi").datagrid("getSelected");
 	if(_row){
 		let bien ={makhoa:_row.makhoa};
-		xoadulieuajax("../model/delete.php",bien,"dg-taodethi","Bạn đang xóa một Khoa, bạn chắc chứ?");
+		xoadulieuajax("../model/delete.php",bien,"dg-taodethi","Bạn đang xóa một Đề Thi, bạn chắc chứ?");
 	}
 	else{
 		thongbao("Hãy chọn khoa cần xóa");

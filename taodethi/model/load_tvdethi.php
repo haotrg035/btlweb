@@ -1,5 +1,6 @@
 <?php			
 		include "../../ketnoicsdl/ketnoi.php";
+
 		if(isset($_POST['timkiem'])){
 			$timkiem=$_POST['timkiem'];
 			$page = isset($_POST['page']) ? intval($_POST['page']) : 1;

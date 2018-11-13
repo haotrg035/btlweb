@@ -1,5 +1,9 @@
 <?php
-	// die('Bad Request!')
+	session_start();
+
+	if (!isset($_SESSION['username'])) {
+		header('Location:./login.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -12,10 +16,10 @@
 <body>
 	<div id="wrapper">
 		<header id="header">
-			<img src="img/header.png" width="1200px" alt="">
+			<img src="img/header.jpg" width="1200px" alt="">
 		</header><!-- /header -->
 		<div id="mini-header">
-			Xin Chào, Admin
+			<span  id="username">Xin Chào, <i style="color:lightgray"><?php echo $_SESSION['username']; ?></i></span><a id="dangxuatbtn" href="./login.php?dangxuat=true">Đăng Xuất</a>
 		</div>
 		
 		<div id="home-menu">
@@ -40,7 +44,7 @@
 			<div class="item-wrapper">
 				<a class="home-menu-item" href="dapan/view/index.php" title="" style="">
 					<img src="img/file_ok_icon.png" width="150px" height="150px alt="Đáp Án">
-					<div class="menu-item-name">Đáp Án</div>
+					<div class="menu-item-name">Thư Viện Đáp Án</div>
 				</a>
 			</div>
 			<br>
@@ -64,7 +68,7 @@
 			</div>
 		</div>
 	<footer>
-		<img src="img/footer.png" width="1200px" alt="">
+		<img src="img/footer.jpg" width="1200px" alt="">
 	</footer>
 	</body>
 	</html>

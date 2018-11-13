@@ -8,13 +8,9 @@
 	background-color: red; 
 	margin: auto;
 }
-.banner{
-	width: 1000px; 
-	height: 100px; 
-	margin: auto;
-}
 body{
-	background: #e9ebee;	
+	background: #e9ebee;
+	font-family: 'Times New Roman', Times, serif;	
 }
 #wrapper{
 	width: 1200px;
@@ -24,10 +20,11 @@ body{
 }
 #mini-header{
 	width: full-content;
-	box-shadow: 0px 0px 3px black;
-	background: #eaeaea;
+	background: white;
+	border-bottom: 1px solid tan;
 	color: black;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 14px; 
 	text-align: right;
 	font-weight: bold;
 }
@@ -54,4 +51,21 @@ body{
 .menu-item-name{
 	font-size: larger;
 	font-weight: bold;
+}
+#dangxuatbtn{
+	text-decoration: none;
+	color: white;
+	text-shadow: 0px 0px 3px black;
+	margin-left: 5px;
+	padding: 10px 5px;
+	background: tan;
+}
+#dangxuatbtn:hover{
+	background: tomato;
+}
+#username{
+	padding: 10px 5px;
+	background: tan;
+	color: white;
+	text-shadow: 0px 0px 3px black;
 }

@@ -48,5 +48,22 @@ $('#mamon').combobox({
         $('#madethi').combobox({
             url:'../model/taidulieucomboboxdethi.php?mamon='+nval,
         });
+        $.ajax({
+            type: "get",
+            url: "../model/laysolieucauhoi.php",
+            data: {mamon:nval},
+            dataType: "text",
+            success: function (response) {
+                result = JSON.parse(response);
+                $('#lbl_de').html('- Tối Đa <b>'+result['socaude']+'</b> Câu');
+                $('#lbl_tb').html('- Tối Đa <b>'+result['socautb']+'</b> Câu');
+                $('#lbl_kho').html('- Tối Đa <b>'+result['socaukho']+'</b> Câu');
+
+                $('#socaude').numberspinner({max:result['socaude']});
+                $('#socautb').numberspinner({max:result['socautb']});
+                $('#socaukho').numberspinner({max:result['socaukho']});
+
+            }
+        });
     }
 });

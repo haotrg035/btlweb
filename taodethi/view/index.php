@@ -31,16 +31,17 @@ closed="true" buttons="#btns-dlg-taodethi">
         </div>
         <div class="fitem">
             <div>&nbsp;</div>
-            <b>Độ Khó</b>
-            <div class="fitem" style="padding: 10px 0px 10px 20px!important;">
-                <input id="socaude" name="socaude" class="easyui-numberspinner" style="width:100%;" label="Dễ:"
-                labelPosition="left"  data-options="min:0,max:100,editable:true">
+            <div class="fitem" style="text-align:center !important;font-weight:bold;font-size:18px">Độ Khó</div>
+            <div class="fitem" style="padding: 0px 0px 0px 0px!important;">
+                <label for="socaude">Dễ <span id="lbl_de"></span>:</label>
+                <input id="socaude" name="socaude" class="easyui-numberspinner" style="width:100%;"
+                data-options="min:0,max:100,editable:true">
                 <div>&nbsp;</div>
-                <input id="socautb" name="socautb" class="easyui-numberspinner" style="width:100%;"label="Trung Bình:"
-                labelPosition="left"  data-options="min:0,max:100,editable:true">
+                <label for="socaude">Trung Bình <span id="lbl_tb"></span>:</label>
+                <input id="socautb" name="socautb" class="easyui-numberspinner" style="width:100%;"  data-options="min:0,max:100,editable:true">
                 <div>&nbsp;</div>
-                <input id="socaukho" name="socaukho" class="easyui-numberspinner" style="width:100%;"label="Khó:"
-                labelPosition="left"  data-options="min:0,max:100,editable:true">
+                <label for="socaude">Khó <span id="lbl_kho"></span>:</label>
+                <input id="socaukho" name="socaukho" class="easyui-numberspinner" style="width:100%;" data-options="min:0,max:100,editable:true">
             </div>
         </div>
         

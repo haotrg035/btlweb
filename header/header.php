@@ -11,8 +11,9 @@
     <script type="text/javascript" src="../../js/thuvien.js"></script>
 </head>
 <body style="background:#eaeaea">
-	<div style="text-align: center">
-		<div class="banner" style="text-align: center;">
-			<img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/img/header.png"  width="1200" height="120">
+	<div style="text-align: center;">
+		<div style="text-align: center;">
+            <img src="http://<?php echo $_SERVER['HTTP_HOST'];?>/btlweb/img/header.jpg"  width="1200" height="120"
+            style="box-shadow:3px 3px 8px gray">
         </div>
     
