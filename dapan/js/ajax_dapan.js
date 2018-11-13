@@ -62,7 +62,6 @@ function addDapAn(){
 function editDapAn(){
 	let _row = $("#dg-dapan").datagrid("getSelected");
 	if(_row){
-		let _makhoa=_row.makhoa;
 		$("#dapan-fm").form("load",_row);
 		$('#dlg-dapan').dialog({
 			title:'Sửa Thông Tin Đáp Án',

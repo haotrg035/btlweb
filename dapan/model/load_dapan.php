@@ -7,13 +7,14 @@
 			$offset = ($page-1)*$rows;
 			$result = array();
 			$rs = $conn->query("SELECT COUNT(1) FROM `dapan` WHERE `dapan`.madapan='$timkiem' 
-				OR `dapan`.macauhoi LIKE '%$timkiem%' OR `dapan`.mamon LIKE '%$timkiem%' ");	
-				$row = mysqli_fetch_row($rs);
-				$result["total"] = $row[0]; 
+				OR `dapan`.macauhoi LIKE '%$timkiem%'
+				OR `dapan`.`noidung` LIKE '%$timkiem%' ");	
+			$row = mysqli_fetch_row($rs);
+			$result["total"] = $row[0]; 
 			$s="SELECT * FROM `dapan` WHERE `dapan`.madapan='$timkiem' 
-				OR `dapan`.macauhoi LIKE '%$timkiem%' OR `dapan`.`noidung` LIKE '%$timkiem%' OR `dapan`.macauhoi LIKE '%$timkiem%'
-			   	LIMIT $offset,$rows";	 
-				$rs = $conn->query($s);
+				OR `dapan`.macauhoi LIKE '%$timkiem%' OR `dapan`.`noidung` LIKE '%$timkiem%'
+				LIMIT $offset,$rows";	 
+			$rs = $conn->query($s);
 				$items = array();
 			while($row = mysqli_fetch_object($rs)){
 					array_push($items, $row);

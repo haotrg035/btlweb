@@ -4,6 +4,8 @@ function setMaCH(){
 }
 //thêm một khoa mới
 function addCauHoi(){
+	$('#macauhoi').textbox('enable');
+	$('#mamon').textbox('enable');
 	$('#dlg-cauhoi').dialog({
 		title:'Thêm Câu Hỏi',
 		buttons:[{
@@ -34,8 +36,11 @@ function addCauHoi(){
 function editCauHoi(){
 	let _row = $("#dg-cauhoi").datagrid("getSelected");
 	if(_row){
-		let _makhoa=_row.makhoa;
+		let _macauhoicu=_row.macauhoi;
 		$("#cauhoi-fm").form("load",_row);
+		$('#macauhoi').textbox('setValue',_macauhoicu);
+		$('#macauhoi').textbox('disable');
+		$('#mamon').textbox('disable');
 		$('#dlg-cauhoi').dialog({
 			title:'Sửa Thông Tin Câu Hỏi',
 			buttons:[{
@@ -47,7 +52,7 @@ function editCauHoi(){
 					_noidung=$("#noidung").textbox("getValue");
 					_mamon=$("#mamon").combobox("getValue");
 
-					let bien ={macauhoicu:_row.macauhoi,macauhoi:_macauhoi,dokho:_dokho,noidung:_noidung,mamon:_mamon};
+					let bien ={macauhoicu:_macauhoicu,macauhoi:_macauhoi,dokho:_dokho,noidung:_noidung,mamon:_mamon};
 					sendajax("../model/edit.php",bien,"dg-cauhoi");
 					$("#dlg-cauhoi").dialog("close");
 				}

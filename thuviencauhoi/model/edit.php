@@ -24,7 +24,7 @@ if(isset($_POST["thamso"]["macauhoi"]) and isset($_POST["thamso"]["noidung"])){
 	}
 	$noidung=$_POST["thamso"]["noidung"];
 	$mamon=$_POST["thamso"]["mamon"];
-	if(KTTrung_MaCauHoi($macauhoi) and $macauhoi !=$macauhoicu){
+	if(KTTrung_MaCauHoi($macauhoi) and $macauhoi != $macauhoicu){
 		echo "Mã câu hỏi đã tồn tại vui lòng kiểm tra lại";
 	}
 	else{
