@@ -46,16 +46,16 @@ include_once 'ketnoi.php';
             ORDER BY RAND() LIMIT $socaude";
             $rs=array_merge($rs,travemang($sql));
         }
-        if ($socaude != 0) {
+        if ($socautb != 0) {
             $sql = "SELECT `tvcauhoi`.`intdokho` AS `dokho`,`tvcauhoi`.`macauhoi`,`tvcauhoi`.`noidung` AS `noidungcauhoi`
             FROM `tvcauhoi` WHERE `tvcauhoi`.mamon = '$mamon' AND `tvcauhoi`.`intdokho` = 2
-            ORDER BY RAND() LIMIT $socaude";
+            ORDER BY RAND() LIMIT $socautb";
             $rs=array_merge($rs,travemang($sql));
         }
-        if ($socaude != 0) {
+        if ($socaukho != 0) {
             $sql = "SELECT `tvcauhoi`.`intdokho` AS `dokho`,`tvcauhoi`.`macauhoi`,`tvcauhoi`.`noidung` AS `noidungcauhoi`
             FROM `tvcauhoi` WHERE `tvcauhoi`.mamon = '$mamon' AND `tvcauhoi`.`intdokho` = 3
-            ORDER BY RAND() LIMIT $socaude";
+            ORDER BY RAND() LIMIT $socaukho";
             $rs=array_merge($rs,travemang($sql));
         }
        return $rs;
